@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with assigned educational role and identity details",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User Firebase Auth UID" },
+        "email": { "type": "string", "format": "email", "description": "User email address" },
+        "displayName": { "type": "string", "maxLength": 100, "description": "Display name of the user" },
+        "photoURL": { "type": "string", "description": "User profile photo avatar" },
+        "role": { "type": "string", "enum": ["teacher", "parent"], "description": "Role in the educational system" },
+        "createdAt": { "type": "string", "description": "ISO timestamp of creation" }
+      },
+      "required": ["uid", "email", "displayName", "role"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student record with academic and personal enrollment details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique student identifier" },
+        "name": { "type": "string", "maxLength": 100, "description": "Full name of student" },
+        "rollNumber": { "type": "string", "maxLength": 20, "description": "Class roll number" },
+        "class": { "type": "string", "maxLength": 10, "description": "Grade or class name" },
+        "section": { "type": "string", "maxLength": 10, "description": "Class section" },
+        "parentName": { "type": "string", "maxLength": 100, "description": "Guardian or parent full name" },
+        "parentEmail": { "type": "string", "format": "email", "description": "Guardian email for communication" },
+        "parentPhone": { "type": "string", "maxLength": 20, "description": "Guardian contact phone number" },
+        "bloodGroup": { "type": "string", "maxLength": 10, "description": "Blood group of student" },
+        "attendanceRate": { "type": "number", "description": "Overall percentage of attendance" }
+      },
+      "required": ["id", "name", "rollNumber", "class", "section", "parentName"]
+    },
+    "Notice": {
+      "title": "Notice",
+      "description": "School announcement or circular published for parents and staff",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Notice ID" },
+        "title": { "type": "string", "maxLength": 200, "description": "Notice title" },
+        "category": { "type": "string", "maxLength": 50, "description": "Category such as Academic, Exam, General" },
+        "date": { "type": "string", "maxLength": 20, "description": "Publish date string" },
+        "priority": { "type": "string", "enum": ["urgent", "important", "normal"], "description": "Priority tag" },
+        "content": { "type": "string", "maxLength": 2000, "description": "Full notice message" },
+        "issuedBy": { "type": "string", "maxLength": 100, "description": "Issuer name" },
+        "targetRole": { "type": "string", "enum": ["all", "parents", "teachers"], "description": "Audience" }
+      },
+      "required": ["id", "title", "content", "priority"]
+    },
+    "Meeting": {
+      "title": "Meeting",
+      "description": "Parent-Teacher meeting appointment slot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Meeting unique ID" },
+        "parentEmail": { "type": "string", "format": "email", "description": "Email of requesting parent" },
+        "parentName": { "type": "string", "maxLength": 100, "description": "Name of requesting parent" },
+        "studentName": { "type": "string", "maxLength": 100, "description": "Child name" },
+        "teacherName": { "type": "string", "maxLength": 100, "description": "Teacher meeting with" },
+        "requestedDate": { "type": "string", "maxLength": 20, "description": "Requested meeting date" },
+        "requestedTime": { "type": "string", "maxLength": 20, "description": "Requested time slot" },
+        "reason": { "type": "string", "maxLength": 500, "description": "Reason for discussion" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "completed", "cancelled"], "description": "Meeting status" }
+      },
+      "required": ["id", "parentEmail", "parentName", "studentName", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile with role authentication and identity"
+    },
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Enrolled student records and guardian links"
+    },
+    "/notices/{noticeId}": {
+      "schema": "Notice",
+      "description": "Official school circulars and announcements"
+    },
+    "/meetings/{meetingId}": {
+      "schema": "Meeting",
+      "description": "Parent-Teacher conference consultation requests"
+    }
+  }
+}
