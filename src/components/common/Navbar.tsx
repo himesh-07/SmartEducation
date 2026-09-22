@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div>
               <span className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-1.5">
-                SmartEdution
+                EduBridge
               </span>
               <p className="text-xs text-slate-500 hidden sm:block">Education Management System</p>
             </div>
