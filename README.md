@@ -2,7 +2,7 @@
 
 **Smarter Education. Better Communication. Brighter Futures.**
 
-EduBridge is a centralized education management platform that brings **teachers, parents, and students** together in one digital system. It lets schools handle day-to-day academic tasks while giving parents a clear, simple way to track their child's progress — attendance, exam results, notices, assignments, and school events — all from a single dashboard.
+EduBridge is a centralized education management platform that brings **teachers, parents & students** together in one digital system. It lets schools handle day-to-day academic tasks while giving parents a clear, simple way to track their child's progress — attendance, exam results, notices, assignments, and school events — all from a single dashboard.
 
 ---
 
@@ -22,9 +22,9 @@ Traditional school communication is scattered across notebooks, phone calls, and
 ##  Key Features
 
 ###  Landing Experience
-- Unified entry point with **Teacher Login** and **Parent Login**
+- Unified entry point with **Teacher Login** & **Parent Login**
 - Instant demo access (no setup needed) to explore the platform as a sample Teacher or Parent
-- Live student snapshot preview showing attendance, latest exam scores, and AI insights at a glance
+- Live student snapshot preview showing attendance, latest exam scores and AI insights at a glance
 
 ###  Teacher Portal
 - Take and manage class attendance
