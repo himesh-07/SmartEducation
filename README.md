@@ -162,7 +162,7 @@ This generates the optimized production build inside the `dist/` folder.
 
 ##  Built with Google AI Studio
 
-The initial UI and application logic for EduBridge were prototyped and iterated using **Google AI Studio**, then refined and structured into a production-ready React + Firebase codebase.
+The initial UI & application logic for EduBridge were prototyped & iterated using **Google AI Studio**, then refined & structured into a production-ready React + Firebase codebase.
 
 ---
 
@@ -187,7 +187,7 @@ firebase init
 - Go to [Google Cloud Console](https://console.cloud.google.com/)
 - Select the project matching your Firebase project ID (Firebase projects are backed by Google Cloud projects)
 - Enable required APIs (Firestore API, Identity Toolkit API, Cloud Functions API if used)
-- Manage billing, IAM permissions, and monitoring from here if scaling beyond Firebase's free tier
+- Manage billing, IAM permissions, & monitoring from here if scaling beyond Firebase's free tier
 
 ### 4. Build & Deploy
 ```bash
@@ -198,7 +198,7 @@ firebase deploy
 Once deployed, Firebase will provide a live Hosting URL for your EduBridge instance.
 
 ### 5. Firestore Security Rules
-Ensure `firestore.rules` is reviewed and deployed to protect student and parent data:
+Ensure `firestore.rules` is reviewed and deployed to protect student & parent data:
 ```bash
 firebase deploy --only firestore:rules
 ```
